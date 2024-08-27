@@ -8,6 +8,7 @@
 
 
 import Foundation
+import CoreData
 
 class ViewModel {
     private var tasks: [TaskEntity] = []

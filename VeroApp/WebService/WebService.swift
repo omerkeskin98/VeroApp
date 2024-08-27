@@ -19,7 +19,7 @@ class WebService {
     
     private init() {}
 
-    // Struct to decode the OAuth response
+  
     private struct OAuthResponse: Decodable {
         let oauth: OAuth
     }
@@ -73,19 +73,19 @@ class WebService {
             "Authorization": "Bearer \(token)"
         ]
         
-        // Change the HTTP method to GET
+
         AF.request(resourceURL, method: .get, headers: headers)
             .responseData { response in
                 switch response.result {
                 case .success(let data):
-                    // Print the raw response data for debugging
+    
                     if let responseString = String(data: data, encoding: .utf8) {
                         print("Raw Response Data: \(responseString)")
                     }
                     
-                    // Decode the response data
+             
                     do {
-                        // Expect an array of tasks
+                      
                         let tasks = try JSONDecoder().decode([Task].self, from: data)
                         print("Fetched Tasks from API: \(tasks)")
                         completion(tasks)

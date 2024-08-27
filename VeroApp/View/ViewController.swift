@@ -19,10 +19,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private let searchBar = UISearchBar()
     private let refreshControl = UIRefreshControl()
     private let qrScanButton = UIButton(type: .system)
-    private var reader: QRCodeReader?
     private var readerViewController: QRCodeReaderViewController?
     private let reachability = try! Reachability()
-
+    
+    private let largeTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Vero"
+        label.font = UIFont.systemFont(ofSize: 50, weight: .bold)
+        label.textColor = .label
+        label.textAlignment = .left
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -30,65 +38,73 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         setupKeyboardDismissal()
         setupReachability()
         tableView.rowHeight = UITableView.automaticDimension
-    
     }
     
     private func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.systemBackground
         
-        // Setup QR Scan Button
+        
+        view.addSubview(largeTitleLabel)
+        
+       
         qrScanButton.setTitle("Scan QR", for: .normal)
         qrScanButton.addTarget(self, action: #selector(scanQRCode), for: .touchUpInside)
         view.addSubview(qrScanButton)
         
-        qrScanButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
-            make.right.equalToSuperview().inset(10)
-            make.height.equalTo(30)  // Adjust size as needed
-        }
         
-        // Setup Search Bar
         searchBar.delegate = self
         view.addSubview(searchBar)
         
-        searchBar.snp.makeConstraints { make in
-            make.top.equalTo(qrScanButton.snp.bottom).offset(10)
-            make.left.right.equalToSuperview().inset(10)
-            make.height.equalTo(44)  // Adjust height as needed
-        }
         
-        // Setup Table View
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TaskCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
         
+        
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+        
+       
+        largeTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
+            make.centerY.equalTo(qrScanButton)
+            make.left.equalToSuperview().inset(20)
+        }
+        
+        qrScanButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
+            make.right.equalToSuperview().inset(20)
+            make.height.equalTo(40)
+        }
+        
+        searchBar.snp.makeConstraints { make in
+            make.top.equalTo(qrScanButton.snp.bottom).offset(20)
+            make.left.right.equalToSuperview().inset(10)
+            make.height.equalTo(50)
+        }
+        
         tableView.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom)
             make.left.right.bottom.equalToSuperview()
         }
-        
-        // Setup Refresh Control
-        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-        tableView.refreshControl = refreshControl
     }
     
     private func loadTasks() {
-        viewModel.loadTasks {
+        viewModel.loadTasks { [weak self] in
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
     }
     
     private func setupReachability() {
         reachability.whenReachable = { _ in
-            // Network is reachable
+        
         }
-        reachability.whenUnreachable = { _ in
-            // Network is unreachable
+        reachability.whenUnreachable = { [weak self] _ in
             DispatchQueue.main.async {
-                self.showNoInternetAlert()
+                self?.showNoInternetAlert()
             }
         }
         
@@ -101,10 +117,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @objc private func refreshData() {
         if reachability.connection != .unavailable {
-            viewModel.loadTasks {
+            viewModel.loadTasks { [weak self] in
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.refreshControl.endRefreshing()
+                    self?.tableView.reloadData()
+                    self?.refreshControl.endRefreshing()
                 }
             }
         } else {
@@ -124,7 +140,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // Dismiss the keyboard when the user starts scrolling
         dismissKeyboard()
     }
     
@@ -142,6 +157,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TaskCell
         let task = viewModel.filteredTasks[indexPath.row]
         cell.configure(with: task)
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -151,7 +167,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @objc private func scanQRCode() {
-      
         let builder = QRCodeReaderViewControllerBuilder {
             $0.reader = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
             $0.showTorchButton = true
@@ -160,7 +175,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         readerViewController = QRCodeReaderViewController(builder: builder)
         readerViewController?.delegate = self
-        
         
         if let readerVC = readerViewController {
             present(readerVC, animated: true, completion: nil)
@@ -172,14 +186,10 @@ extension ViewController: QRCodeReaderViewControllerDelegate {
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         searchBar.text = result.value
         searchBar.delegate?.searchBar?(searchBar, textDidChange: result.value)
-        
-    
         dismiss(animated: true, completion: nil)
     }
     
     func readerDidCancel(_ reader: QRCodeReaderViewController) {
-       
         dismiss(animated: true, completion: nil)
     }
 }
-
