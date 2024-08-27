@@ -8,24 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		179EA76E2C777AD3000F209C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EA76D2C777AD3000F209C /* AppDelegate.swift */; };
-		179EA7702C777AD3000F209C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EA76F2C777AD3000F209C /* SceneDelegate.swift */; };
 		179EA7722C777AD3000F209C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EA7712C777AD3000F209C /* ViewController.swift */; };
-		179EA7752C777AD3000F209C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 179EA7742C777AD3000F209C /* Base */; };
 		179EA7782C777AD3000F209C /* VeroApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 179EA7762C777AD3000F209C /* VeroApp.xcdatamodeld */; };
 		179EA77A2C777AD4000F209C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 179EA7792C777AD4000F209C /* Assets.xcassets */; };
 		179EA77D2C777AD4000F209C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 179EA77C2C777AD4000F209C /* Base */; };
+		179EA7852C777D10000F209C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EA7842C777D10000F209C /* Task.swift */; };
+		179EA7872C777D33000F209C /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EA7862C777D33000F209C /* WebService.swift */; };
+		179EA7892C777D5A000F209C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EA7882C777D5A000F209C /* ViewModel.swift */; };
+		179EA7902C777E12000F209C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 179EA78F2C777E12000F209C /* Alamofire */; };
+		179EA7932C777E24000F209C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 179EA7922C777E24000F209C /* SnapKit */; };
+		179EA7952C77835B000F209C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EA7942C77835B000F209C /* CoreDataManager.swift */; };
+		179EA79B2C7CF23C000F209C /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179EA79A2C7CF23C000F209C /* TaskCell.swift */; };
+		179EA79E2C7CF44A000F209C /* QRCodeReader in Frameworks */ = {isa = PBXBuildFile; productRef = 179EA79D2C7CF44A000F209C /* QRCodeReader */; };
+		179EA7A12C7E26E6000F209C /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 179EA7A02C7E26E6000F209C /* Reachability */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		179EA76A2C777AD3000F209C /* VeroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		179EA76D2C777AD3000F209C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		179EA76F2C777AD3000F209C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		179EA7712C777AD3000F209C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		179EA7742C777AD3000F209C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		179EA7772C777AD3000F209C /* VeroApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VeroApp.xcdatamodel; sourceTree = "<group>"; };
 		179EA7792C777AD4000F209C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		179EA77C2C777AD4000F209C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		179EA77E2C777AD4000F209C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		179EA7842C777D10000F209C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		179EA7862C777D33000F209C /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		179EA7882C777D5A000F209C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		179EA7942C77835B000F209C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		179EA79A2C7CF23C000F209C /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				179EA7902C777E12000F209C /* Alamofire in Frameworks */,
+				179EA7A12C7E26E6000F209C /* Reachability in Frameworks */,
+				179EA79E2C7CF44A000F209C /* QRCodeReader in Frameworks */,
+				179EA7932C777E24000F209C /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,15 +73,50 @@
 			isa = PBXGroup;
 			children = (
 				179EA76D2C777AD3000F209C /* AppDelegate.swift */,
-				179EA76F2C777AD3000F209C /* SceneDelegate.swift */,
-				179EA7712C777AD3000F209C /* ViewController.swift */,
-				179EA7732C777AD3000F209C /* Main.storyboard */,
+				179EA78D2C777DAE000F209C /* Model */,
+				179EA78C2C777DA3000F209C /* View */,
+				179EA78B2C777D72000F209C /* ViewModel */,
+				179EA78A2C777D67000F209C /* WebService */,
 				179EA7792C777AD4000F209C /* Assets.xcassets */,
 				179EA77B2C777AD4000F209C /* LaunchScreen.storyboard */,
 				179EA77E2C777AD4000F209C /* Info.plist */,
 				179EA7762C777AD3000F209C /* VeroApp.xcdatamodeld */,
 			);
 			path = VeroApp;
+			sourceTree = "<group>";
+		};
+		179EA78A2C777D67000F209C /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				179EA7862C777D33000F209C /* WebService.swift */,
+				179EA7942C77835B000F209C /* CoreDataManager.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		179EA78B2C777D72000F209C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				179EA7882C777D5A000F209C /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		179EA78C2C777DA3000F209C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				179EA7712C777AD3000F209C /* ViewController.swift */,
+				179EA79A2C7CF23C000F209C /* TaskCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		179EA78D2C777DAE000F209C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				179EA7842C777D10000F209C /* Task.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +135,12 @@
 			dependencies = (
 			);
 			name = VeroApp;
+			packageProductDependencies = (
+				179EA78F2C777E12000F209C /* Alamofire */,
+				179EA7922C777E24000F209C /* SnapKit */,
+				179EA79D2C7CF44A000F209C /* QRCodeReader */,
+				179EA7A02C7E26E6000F209C /* Reachability */,
+			);
 			productName = VeroApp;
 			productReference = 179EA76A2C777AD3000F209C /* VeroApp.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +169,12 @@
 				Base,
 			);
 			mainGroup = 179EA7612C777AD3000F209C;
+			packageReferences = (
+				179EA78E2C777E12000F209C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				179EA7912C777E24000F209C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				179EA79C2C7CF44A000F209C /* XCRemoteSwiftPackageReference "QRCodeReader.swift" */,
+				179EA79F2C7E26E6000F209C /* XCRemoteSwiftPackageReference "Reachability" */,
+			);
 			productRefGroup = 179EA76B2C777AD3000F209C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,7 +191,6 @@
 			files = (
 				179EA77A2C777AD4000F209C /* Assets.xcassets in Resources */,
 				179EA77D2C777AD4000F209C /* Base in Resources */,
-				179EA7752C777AD3000F209C /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,21 +204,17 @@
 				179EA7722C777AD3000F209C /* ViewController.swift in Sources */,
 				179EA7782C777AD3000F209C /* VeroApp.xcdatamodeld in Sources */,
 				179EA76E2C777AD3000F209C /* AppDelegate.swift in Sources */,
-				179EA7702C777AD3000F209C /* SceneDelegate.swift in Sources */,
+				179EA7872C777D33000F209C /* WebService.swift in Sources */,
+				179EA79B2C7CF23C000F209C /* TaskCell.swift in Sources */,
+				179EA7892C777D5A000F209C /* ViewModel.swift in Sources */,
+				179EA7952C77835B000F209C /* CoreDataManager.swift in Sources */,
+				179EA7852C777D10000F209C /* Task.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		179EA7732C777AD3000F209C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				179EA7742C777AD3000F209C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		179EA77B2C777AD4000F209C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -301,7 +357,6 @@
 				INFOPLIST_FILE = VeroApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -329,7 +384,6 @@
 				INFOPLIST_FILE = VeroApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -367,6 +421,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		179EA78E2C777E12000F209C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		179EA7912C777E24000F209C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		179EA79C2C7CF44A000F209C /* XCRemoteSwiftPackageReference "QRCodeReader.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yannickl/QRCodeReader.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.1.1;
+			};
+		};
+		179EA79F2C7E26E6000F209C /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		179EA78F2C777E12000F209C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 179EA78E2C777E12000F209C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		179EA7922C777E24000F209C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 179EA7912C777E24000F209C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		179EA79D2C7CF44A000F209C /* QRCodeReader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 179EA79C2C7CF44A000F209C /* XCRemoteSwiftPackageReference "QRCodeReader.swift" */;
+			productName = QRCodeReader;
+		};
+		179EA7A02C7E26E6000F209C /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 179EA79F2C7E26E6000F209C /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		179EA7762C777AD3000F209C /* VeroApp.xcdatamodeld */ = {

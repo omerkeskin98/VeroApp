@@ -1,0 +1,42 @@
+{
+  "originHash" : "8485956e5246b925e55952b082bd909d3c434aea4ccae8fa99540a4e92b86057",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
+        "version" : "5.9.1"
+      }
+    },
+    {
+      "identity" : "qrcodereader.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yannickl/QRCodeReader.swift.git",
+      "state" : {
+        "revision" : "5020b5a47199d8ba80c83a4b4fafd70e9dc9dc7f",
+        "version" : "10.1.1"
+      }
+    },
+    {
+      "identity" : "reachability.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashleymills/Reachability.swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "7cbd73f46a7dfaeca079e18df7324c6de6d1834a"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
+        "version" : "5.7.1"
+      }
+    }
+  ],
+  "version" : 3
+}
